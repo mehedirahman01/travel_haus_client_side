@@ -1,5 +1,7 @@
 import React from 'react';
+// import banner image
 import banner from '../../../images/cover.jpg'
+// import icons
 import { IconContext } from 'react-icons';
 import { FaWineGlassAlt, FaTree, FaUniversity, FaIcons } from 'react-icons/fa';
 // Banner Page Style
@@ -13,13 +15,13 @@ const bannerStyle = {
 
 const Banner = () => {
     return (
+        // Banner
         <div>
             <div style={bannerStyle} className="d-flex flex-column justify-content-center py-5 text-white">
                 <div className="py-3">
                     <h1>Plan your next Holiday</h1>
                     <h3>Choose From Our Best Packages</h3>
                 </div>
-
                 <div className="container">
                     <div className="row gx-lg-5 gy-3">
                         <IconContext.Provider value={{ color: "white", className: "global-class-name" }}>

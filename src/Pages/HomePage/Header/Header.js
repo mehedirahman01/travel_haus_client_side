@@ -9,7 +9,6 @@ const Header = () => {
                 <div className="container-fluid">
                     {/* Navbar Left */}
                     <div className="d-flex align-items-center">
-                        {/* <img src={logo} alt="" width="70" height="50" className="d-inline-block align-text-top" /> */}
                         <div className="ms-2"><NavLink className="nav-link p-0" to="/"><h3 className="text-white m-0">TravelHaus</h3></NavLink></div>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

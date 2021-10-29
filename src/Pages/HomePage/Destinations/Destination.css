@@ -1,0 +1,24 @@
+.firstBackground{
+    background-image: url('../../../images/destinations/cali.jpg');
+    height: "270px",
+}
+
+.secondBackground{
+    background-image: url('../../../images/destinations/los.jpg');
+    height: "270px",
+}
+
+.thirdBackground{
+    background-image: url('../../../images/destinations/new.jpg');
+    height: "270px",
+}
+
+.fourthBackground{
+    background-image: url('../../../images/destinations/dela.jpg');
+    height: "270px",
+}
+
+.fifthBackground{
+    background-image: url('../../../images/destinations/nevada.jpg');
+    height: "270px",
+}
