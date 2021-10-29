@@ -13,7 +13,7 @@ const backgroundStyle = {
 
 const WhyChooseUs = () => {
     return (
-        <div className="my-5 py-5" style={backgroundStyle} >
+        <div className="mt-5 py-5" style={backgroundStyle} >
             <h1>About US</h1>
             <div className="row d-flex justify-content-center">
                 {/* Left Section */}
