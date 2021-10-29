@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
                 <div className="col-lg-6 col-12 p-5">
                     <h4 className="pb-2 text-lg-start">Why Choose Us</h4>
                     <div className="d-flex flex-column">
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center mt-3">
                             <img className="img-fluid" src={paymentIcon} alt="" style={{ width: "40px" }} />
                             <p className="m-0 ps-2">BOOKING WITH SPREAD PAYMENTS</p>
                         </div>

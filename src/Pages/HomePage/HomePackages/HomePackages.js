@@ -3,14 +3,15 @@ import HomePackage from '../HomePackage/HomePackage';
 
 const HomePackages = () => {
     const [packages, setPackages] = useState([])
+    // Load and set data
     useEffect(() => {
-        fetch("http://localhost:5000/packages")
+        fetch("https://protected-stream-04533.herokuapp.com/packages")
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])
     return (
         <div className="container my-5">
-            <h1>Our Packages</h1>
+            <h1>Our Latest Packages</h1>
             <hr />
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
