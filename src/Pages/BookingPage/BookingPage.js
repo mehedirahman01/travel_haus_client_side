@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
 const BookingPage = () => {
@@ -15,7 +15,8 @@ const BookingPage = () => {
         fetch(`https://protected-stream-04533.herokuapp.com/book/${_id}`)
             .then(res => res.json())
             .then(data => setSinglePackage(data))
-    })
+            .catch(error => console.log(error))
+    }, [])
 
     const onSubmit = formData => {
         if (!formData.name) {
