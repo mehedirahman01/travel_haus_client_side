@@ -8,6 +8,8 @@ import AuthProvider from './context/AuthProvider';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import MyBookingsPage from './Pages/MyBookingsPage/MyBookingsPage';
+import Packages from './Pages/PackagesPage/Packages/Packages';
+import BookingPage from './Pages/BookingPage/BookingPage';
 
 function App() {
   return (
@@ -29,9 +31,18 @@ function App() {
               <LoginPage></LoginPage>
             </Route>
 
+            <Route exact path="/packages">
+              <Packages></Packages>
+            </Route>
+
+            <Route exact path="/book/:_id">
+              <BookingPage></BookingPage>
+            </Route>
+
             <PrivateRoute exact path="/myBookings">
               <MyBookingsPage></MyBookingsPage>
             </PrivateRoute>
+
           </Switch>
 
           <Footer></Footer>

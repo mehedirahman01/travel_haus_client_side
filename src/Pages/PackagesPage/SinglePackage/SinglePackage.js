@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const HomePackage = (props) => {
-    // Destructuring
+const SinglePackage = (props) => {
     const { singlePackage } = props
     const { _id } = singlePackage
     return (
@@ -30,13 +29,12 @@ const HomePackage = (props) => {
 
                             <li className="list-group-item"><p className="fw-lighter" style={{ textAlign: "justify" }}>{singlePackage?.shortDescription}</p></li>
                         </ul>
-                        <button className="btn btn-success">
-                            <NavLink className="text-decoration-none text-white" to={`/book/${_id}`}>Book Now</NavLink> </button>
+                        <button className="btn btn-success"><NavLink className="text-decoration-none text-white" to={`/book/${_id}`}>Book Now</NavLink></button>
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     );
 };
 
-export default HomePackage;
+export default SinglePackage;
