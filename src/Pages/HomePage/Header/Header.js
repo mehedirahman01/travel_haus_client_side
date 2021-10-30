@@ -2,7 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { RiAccountCircleFill } from 'react-icons/ri'
+import useAuth from '../../../hooks/useAuth';
+import './Header.css'
+
+
 const Header = () => {
+    const { user, handleLogout } = useAuth()
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,21 +39,17 @@ const Header = () => {
                         {/* Navbar Right */}
                         <IconContext.Provider value={{ size: "1.5em" }}>
                             <div className="btn-group">
-                                {/* <button type="button" className="btn btn-success" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <h6 className="text-center m-0"><RiAccountCircleFill /> {user.email ? user.displayName : 'Account'}</h6>
-                                </button> */}
-                                <button type="button" className="btn btn-light" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <h6 className="text-center m-0"><RiAccountCircleFill /> Account</h6>
+                                <button type="button" className="btn btn-success" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h6 className="text-center m-0"><RiAccountCircleFill /> {user?.email ? user.displayName : 'Account'}</h6>
                                 </button>
-                                {/* {
-                                    user.email ? <ul className="dropdown-menu">
-                                        <li><NavLink className="nav-link" to="/home" onClick={handleLogout}>Logout</NavLink></li>
+                                {
+                                    user?.email ? <ul className="dropdown-menu p-0">
+                                        <li><NavLink className="nav-link text-black" to="/home" onClick={handleLogout}><h6>Logout</h6></NavLink></li>
 
-                                    </ul> : <ul className="dropdown-menu">
-                                        <li><NavLink className="nav-link" to="/login">Login</NavLink></li>
-                                        <li><NavLink className="nav-link" to="/register">Register</NavLink></li>
+                                    </ul> : <ul className="dropdown-menu p-0">
+                                        <li><NavLink className="nav-link text-black" to="/login">Login</NavLink></li>
                                     </ul>
-                                } */}
+                                }
                             </div>
                         </IconContext.Provider>
 

@@ -4,20 +4,39 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Home from './Pages/HomePage/Home/Home';
 import Header from './Pages/HomePage/Header/Header';
 import Footer from './Pages/HomePage/Footer/Footer';
+import AuthProvider from './context/AuthProvider';
+import LoginPage from './Pages/LoginPage/LoginPage';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import MyBookingsPage from './Pages/MyBookingsPage/MyBookingsPage';
 
 function App() {
   return (
     <div className="App">
       {/* Set Routes */}
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+
+            <Route exact path="/login">
+              <LoginPage></LoginPage>
+            </Route>
+
+            <PrivateRoute exact path="/myBookings">
+              <MyBookingsPage></MyBookingsPage>
+            </PrivateRoute>
+          </Switch>
+
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
