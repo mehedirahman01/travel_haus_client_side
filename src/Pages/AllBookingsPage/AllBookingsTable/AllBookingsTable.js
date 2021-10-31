@@ -1,11 +1,9 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const MyBookingsTable = (props) => {
+const AllBookingsTable = props => {
     const { singleBooking } = props
     const [selectedPackage, setSelectedPackage] = useState([])
     const { packageId } = singleBooking
-
     // Load Data By ID
     useEffect(() => {
         fetch(`https://protected-stream-04533.herokuapp.com/book/${packageId}`)
@@ -26,9 +24,10 @@ const MyBookingsTable = (props) => {
             <td>{selectedPackage.city}</td>
             <td>{selectedPackage.cost}</td>
             <td>{singleBooking.status}</td>
+            <td><button onClick={() => props.approveBooking(singleBooking._id)} className="btn btn-success">Approve</button></td>
             <td><button onClick={() => props.handleCancelBooking(singleBooking._id)} className="btn btn-danger">Cancel</button></td>
         </tr>
     );
 };
 
-export default MyBookingsTable;
+export default AllBookingsTable;

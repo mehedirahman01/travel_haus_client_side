@@ -32,7 +32,7 @@ const BookingPage = () => {
         formData.packageId = _id
         formData.status = "pending"
 
-        fetch("http://localhost:5000/book", {
+        fetch("https://protected-stream-04533.herokuapp.com/book", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -41,7 +41,6 @@ const BookingPage = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
                 alert("Package Booked Successfully. Please wait for our call.")
                 reset()
                 history.push('/home')

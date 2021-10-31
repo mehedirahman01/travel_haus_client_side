@@ -10,6 +10,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Packages from './Pages/PackagesPage/Packages/Packages';
 import BookingPage from './Pages/BookingPage/BookingPage';
 import MyBookingsPage from './Pages/MyBookingsPage/MyBookingsPage/MyBookingsPage';
+import AllBookingsPage from './Pages/AllBookingsPage/AllBookingsPage/AllBookingsPage';
 
 function App() {
   return (
@@ -41,6 +42,10 @@ function App() {
 
             <PrivateRoute exact path="/myBookings">
               <MyBookingsPage></MyBookingsPage>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/allBookings">
+              <AllBookingsPage></AllBookingsPage>
             </PrivateRoute>
 
           </Switch>
