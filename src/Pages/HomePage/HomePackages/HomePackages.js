@@ -15,13 +15,16 @@ const HomePackages = () => {
             })
             .catch(error => console.log(error))
     }, [])
+
+    const selectedPackages = packages.slice(0, 6)
+
     return (
         <div className="container my-5">
             <h1>Our Latest Packages</h1>
             <hr />
             {
                 dataLoaded ? <div
-                    className="row row-cols-1 row-cols-md-3 g-4"> {packages.map(singlePackage => <HomePackage
+                    className="row row-cols-1 row-cols-md-3 g-4"> {selectedPackages.map(singlePackage => <HomePackage
                         key={singlePackage._id}
                         singlePackage={singlePackage}
                     ></HomePackage>)}

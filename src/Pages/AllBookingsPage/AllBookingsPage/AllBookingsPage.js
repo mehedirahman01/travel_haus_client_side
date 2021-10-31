@@ -7,7 +7,7 @@ const AllBookingsPage = () => {
     const [dataLoaded, setDataLoaded] = useState(false)
     // Load and set data
     useEffect(() => {
-        fetch("http://localhost:5000/allBookings")
+        fetch("https://protected-stream-04533.herokuapp.com/allBookings")
             .then(res => res.json())
             .then(data => {
                 setBookings(data)
@@ -22,7 +22,7 @@ const AllBookingsPage = () => {
         var confirm = window.confirm("Are you sure you want to Cancel Booking?")
         console.log(id)
         if (confirm) {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://protected-stream-04533.herokuapp.com/booking/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -37,11 +37,20 @@ const AllBookingsPage = () => {
     }
 
     const approveBooking = id => {
-        fetch(`http://localhost:5000/booking/${id}`, {
+        fetch(`https://protected-stream-04533.herokuapp.com/booking/${id}`, {
             method: "PUT"
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                fetch("https://protected-stream-04533.herokuapp.com/allBookings")
+                    .then(res => res.json())
+                    .then(data => {
+                        setBookings(data)
+                        setDataLoaded(true)
+                    })
+                    .catch(error => console.log(error))
+            })
+
     }
 
 

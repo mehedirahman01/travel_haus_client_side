@@ -29,7 +29,7 @@ const MyBookingsPage = () => {
     const handleCancelBooking = id => {
         var confirm = window.confirm("Are you sure you want to Cancel Booking?")
         if (confirm) {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://protected-stream-04533.herokuapp.com/booking/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

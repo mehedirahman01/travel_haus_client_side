@@ -11,6 +11,7 @@ import Packages from './Pages/PackagesPage/Packages/Packages';
 import BookingPage from './Pages/BookingPage/BookingPage';
 import MyBookingsPage from './Pages/MyBookingsPage/MyBookingsPage/MyBookingsPage';
 import AllBookingsPage from './Pages/AllBookingsPage/AllBookingsPage/AllBookingsPage';
+import AddPackagePage from './Pages/AddPackagePage/AddPackagePage';
 
 function App() {
   return (
@@ -46,6 +47,10 @@ function App() {
 
             <PrivateRoute exact path="/allBookings">
               <AllBookingsPage></AllBookingsPage>
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/addPackage">
+              <AddPackagePage></AddPackagePage>
             </PrivateRoute>
 
           </Switch>
