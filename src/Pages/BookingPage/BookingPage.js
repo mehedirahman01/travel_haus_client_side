@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 
@@ -9,6 +9,7 @@ const BookingPage = () => {
     const { user } = useAuth();
     const { _id } = useParams()
     const [singlePackage, setSinglePackage] = useState({})
+    const history = useHistory()
 
     // Load Data By ID
     useEffect(() => {
@@ -18,18 +19,20 @@ const BookingPage = () => {
             .catch(error => console.log(error))
     }, [])
 
+    // Handle Form
     const onSubmit = formData => {
+
         if (!formData.name) {
             formData.name = user.displayName
         }
 
-        console.log(formData.email)
-
         if (!formData.email) {
             formData.email = user.email
         }
+        formData.packageId = _id
+        formData.status = "pending"
 
-        fetch("https://protected-stream-04533.herokuapp.com/book", {
+        fetch("http://localhost:5000/book", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -37,7 +40,12 @@ const BookingPage = () => {
             body: JSON.stringify(formData)
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result)
+                alert("Package Booked Successfully. Please wait for our call.")
+                reset()
+                history.push('/home')
+            })
     }
 
     return (
@@ -49,6 +57,8 @@ const BookingPage = () => {
                     <div className="py-4 bg-dark text-white">
                         <h5>Your Details</h5>
                     </div>
+
+                    {/* User Details Form */}
                     <form className="p-4" onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="mb-3">
@@ -85,6 +95,7 @@ const BookingPage = () => {
                     </form>
                 </div>
 
+                {/* Package Details */}
                 <div className="col-lg-4 col-12 border rounded p-0 order-lg-last order-first mb-lg-0 pb-3">
                     <div className="py-4 bg-success text-white">
                         <h5>Order Details</h5>

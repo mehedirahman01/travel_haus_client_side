@@ -28,12 +28,6 @@ const Header = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/packages"><h6 className="text-white m-0">Packages</h6></NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/myBookings"><h6 className="text-white m-0">My Bookings</h6></NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/contact"><h6 className="text-white m-0">Contact us</h6></NavLink>
-                            </li>
                         </ul>
 
                         {/* Navbar Right */}
@@ -44,7 +38,10 @@ const Header = () => {
                                 </button>
                                 {
                                     user?.email ? <ul className="dropdown-menu p-0">
-                                        <li><NavLink className="nav-link text-black" to="/home" onClick={handleLogout}><h6>Logout</h6></NavLink></li>
+                                        <li> <NavLink className="nav-link" to="/myBookings"><h6 className="text-black m-0">My Bookings</h6></NavLink></li>
+                                        <li><NavLink className="nav-link" to="/myBookings"><h6 className="text-black m-0"> Add New Package</h6></NavLink></li>
+                                        <li><NavLink className="nav-link" to="/myBookings"><h6 className="text-black m-0"> All Bookings</h6></NavLink></li>
+                                        <li><NavLink className="nav-link" to="/home" onClick={handleLogout}><h6 className="text-black m-0">Logout</h6></NavLink></li>
 
                                     </ul> : <ul className="dropdown-menu p-0">
                                         <li><NavLink className="nav-link text-black" to="/login">Login</NavLink></li>

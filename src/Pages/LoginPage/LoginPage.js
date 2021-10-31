@@ -23,6 +23,7 @@ const LoginPage = () => {
             .then(result => {
                 history.push(redirect_url)
             })
+            .catch(error => console.log(error))
     }
 
     return (
