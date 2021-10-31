@@ -54,16 +54,11 @@ const AddPackagePage = () => {
                         </div>
 
                         <div className="mb-3">
-                            <label>Cost</label>
-                            <input placeholder="USA" className="form-control" {...register("cost")} />
-                        </div>
-
-                        <div className="mb-3">
                             <label>Image Url</label>
                             <input required placeholder="Image url" className="form-control" {...register("imgUrl")} />
                         </div>
 
-                        <input className="btn btn-success" type="submit" value="Book Now" />
+                        <input className="btn btn-success" type="submit" value="Add Package" />
                     </form>
                 </div>
             </div>
