@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div>
             <div className="container-fluid bg-dark text-white">
-                <div className="row container d-flex justify-content-between py-5">
+                <div className="row container d-flex justify-content-between py-5 m-0">
                     {/* Footer Left */}
                     <div className="col-lg-6 col-12">
                         <div className="">
